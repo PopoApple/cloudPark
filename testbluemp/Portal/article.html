@@ -1,0 +1,159 @@
+<extend name="Public:newbase" />
+<block name="main">
+	<css file="/Theme/Cloudpark/css/common.css" />
+	<css file="/Theme/Cloudpark/css/override.css" />
+	<css file="/Theme/Cloudpark/css/article.css" />
+	<div id="container2" class="transparent opacityTrans">
+			<header>
+				<div id="bodyMask"></div>
+				<div id="headerInner">
+					<div id="logo" class="none">
+						<a href="javascript:;">
+							<img src=""/>
+						</a>
+					</div>
+					<div id="title" class="none">
+						<a href="javascript:;"></a>
+					</div>
+					<div id="menuBtn" class="none">
+						<div class="menuBar" id="menuBar_1"></div>
+						<div class="menuBar" id="menuBar_2"></div>
+						<div class="menuBar" id="menuBar_3"></div>
+					</div>
+				</div>
+				<div id="menuWrap">
+					<div id="dingyun"></div>
+					<div id="menuList">
+						<div id="menuListInner">
+						</div>
+					</div>
+				</div>
+			</header>
+			<div id="container">
+				<nav>
+					<a href="javascript:;" id="link_index">首页</a>
+					<span>&gt;</span>
+					<a href="javascript:;" id="link_channel"></a>
+				</nav>
+				<section id="main">
+					<div id="loading">
+						<span class="mui-spinner"></span>
+					</div>
+					<div id="articleDiv" class="none">
+						<div class="wz_box">
+							<div class="bluemp_block_article_detail">
+		
+								<div class="bluemp_block_article_detail_wapper">
+									<span class="bluemp_block_article_detail_title"></span>
+									<p class="bluemp_block_article_detail_info"></p>
+									<p class="bluemp_block_article_detail_cover"></p>
+									<div class="bluemp_block_article_detail_content">
+		
+									</div>
+								</div>
+							</div>
+							<div class="bluemp_block_article_options">
+		    	
+						    </div>
+						 	<div class="wz_txt article_vote_container" style="margin-top:1em"></div>
+						 	<div class="bluemp_block_article_reply_list">
+						    	
+						    </div>
+						</div>
+					</div>
+				</section>
+				<footer>
+					<div id="diyun"></div>
+					<div id="copyright">版权所有©BlueMP技术支持</div>
+				</footer>
+			</div>
+		</div>
+	<js file="/Theme/Cloudpark/js/zepto.min.js" />
+	<js file="/Theme/Cloudpark/js/iscroll.js" />
+	<js file="/Theme/Cloudpark/js/common.js" />
+	<script>
+		$(function(){
+				layout();
+				new bluemp.block.breadcrumb({
+					type:1,
+					isDefault: false,
+					fnSuccess: function(data) {
+						console.log(data);
+						if(data && data.index_href){
+							$('#logo a,#title a,#link_index').attr('href',data.index_href);
+							var second_href = data.second_href;
+							if(!testMode){
+								second_href = '/Portal'+second_href;
+							}
+							$('#link_channel').html(data.second_name).attr('href',second_href);
+							console.log('data.second_href:',data.second_href);
+							console.log('second_href:',second_href);
+						}
+					}
+				});
+				new bluemp.block.articleDetail({
+		            isDefault: false,
+		            fnSuccess: function(data) {
+						console.log('article----------------');
+						console.log(data);
+						$('#loading').remove();
+						$('#articleDiv').removeClass('none');
+			            $('.bluemp_block_article_detail_title').html(data.title);
+			            $('.bluemp_block_article_detail_info').html(data.posttime);
+			            var pic = data.pic;
+			            if(pic){
+			            	$('.bluemp_block_article_detail_cover').html('<img src="'+data.pic+'" />');
+			            }else{
+			            	$('.bluemp_block_article_detail_cover').remove();
+			            }
+			            $('.bluemp_block_article_detail_content').html(data.content);
+			            if(isWeiXin()&&data.reward&&(data.reward.flg == 1||data.reward.flg == '1')){
+			            	var html = '';
+							html += '<div class="bluemp_block_article_AReward">';
+							html += '<div class="bluemp_block_article_ARewardDiv">';
+							html += '<div class="bluemp_block_article_ARewardTextDiv">';
+							html += '<p class="bluemp_block_article_ARewardIcon">';
+							html += '<span class="bluemp_block_article_ARewardIconSpan bluemp_block_article_ARewardIconSpan_BgColor1">赏</span>';
+							html += '</p>';
+							if(data.reward.thankWord==null){
+								data.reward.thankWord = '';
+							}
+							html += '<p class="bluemp_block_article_ARewardText">'+data.reward.thankWord+'</p>';
+							html += '</div>';
+							html += '<div class="bluemp_block_article_NumberOfRewards">';
+							html += '<ul class="bluemp_block_article_Rewards_ImgList">';
+							for(i=0;data.reward.headerUrl.length>0&&i<data.reward.headerUrl.length;i++){
+								html += '<li><img src="'+data.reward.headerUrl[i]+'"></li>'
+							}
+							html += '</ul>';
+							html += '<p class="bluemp_block_article_ARewardText2">'+data.reward.people+'人打赏</p>';
+							html += '</div>';
+							html += '</div>';
+							html += '</div>';
+							$('.bluemp_block_article_detail').after(html);
+							$('.bluemp_block_article_ARewardIconSpan').click(function(){
+								if (bluemp.loginCheck()) {
+								 	window.location.href = 'http://pay.bluemp.cn/wxpay2/jsapi/pay.php?state='+bluemp_aid+'_'+viewer_id
+								}
+							});
+						}
+		            }
+		        });
+		        new bluemp.block.options();
+				new bluemp.block.replyList();
+				if ($(".article_vote_container")) {
+				    new bluemp.tool.Vote({
+				    	container: $(".article_vote_container")
+				    });
+				}
+				initExtendInfo();
+				initTitle();
+				initHeader();
+				$('#container2').removeClass('transparent');
+			});
+			var winW, rfSize = 40;
+			function layout(){
+				updateSize();
+			}	
+	</script>
+</block>

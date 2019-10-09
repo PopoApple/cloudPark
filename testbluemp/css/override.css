@@ -1,0 +1,221 @@
+
+.bluemp_block_article_detail {
+    padding: 0 .5rem;
+}
+.bluemp_block_article_options {
+    height: inherit;
+    padding: 0 .5rem;
+}
+.bluemp_block_article_optionsWapper {
+    height: 1rem;
+}
+.bluemp_block_article_detail_wapper {
+    clear: both;
+    margin: 0;
+}
+.bluemp_block_article_detail_title {
+	display:inline-block;
+    font-size: 18px;
+    color: #333;
+    line-height: 28px;
+    font-weight: bold;
+    padding:.7rem 0 .5rem 0;
+}
+.bluemp_block_article_detail_info {
+    font-size: 14px;
+    color: #7b7b7b;
+    padding:0 0;
+}
+.bluemp_block_article_detail_cover {
+    text-align: center;
+    padding:.5rem 0 0 0;
+}
+.bluemp_block_article_detail_cover img {
+    width: 100%;
+}
+.bluemp_block_article_detail_content {
+    padding:.5rem 0;
+    font-size: 14px;
+    color: #545454;
+    line-height: 22px;
+    word-wrap: break-word;
+    word-break: normal;
+    width: 100%;
+}
+.bluemp_block_article_options_comment_on {
+    background-color: #f90;
+    border-radius: .2rem;
+    width: inherit;
+}
+.Hot2_n {
+    font-size: .74rem;
+}
+.Hot2_n_p {
+    width: inherit;
+    line-height: 1.5rem;
+    background: #DADADA;
+    padding: 0 .9rem;
+    box-sizing: border-box;
+}
+.Hot2_n p img {
+    height: .74rem;
+    width: .74rem;
+    margin: inherit;
+}
+.question_content_text {
+    margin-top: .5rem;
+}
+.Hot2_n_p2 {
+    line-height: 1.5rem;
+}
+.Hot2_n_p3 {
+    margin: .2rem 3%;
+    height: 1rem;
+    line-height: .8rem;
+}
+.answer_content {
+    font-size: .66rem;
+}
+.dyjd_span {
+    height: 1rem;
+}
+.dyjd_num_span {
+    font-size: .66rem;
+    line-height: inherit;
+}
+.bluemp_block_article_reply_listWapper {
+    background: rgb(247,246,244);
+}
+.bluemp_block_article_reply_listBottom {
+    padding: .5rem 0 1rem 0;
+}
+.bluemp_block_article_reply_blockWapper {
+    padding: .5rem .5rem .3rem 1.3rem;
+}
+.bluemp_block_article_reply_block {
+     overflow: inherit; 
+}
+.bluemp_block_article_reply_blockContent {
+    border-radius: .5rem;
+    background: #fff;
+    float: inherit; 
+    width: inherit; 
+    padding: .5rem .5rem .5rem 1.2rem;
+    border-bottom: inherit; 
+    margin-top: inherit; 
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.1);
+}
+.bluemp_block_article_reply_block_userPhoto {
+    position: absolute;
+    top: 0;
+    left: -.8rem;
+    top: .5rem;
+	float: inherit; 
+	width: inherit; 
+	padding: 0; 
+	margin-top: inherit; 
+}
+.bluemp_block_article_reply_block_userPhoto a {
+    display: block;
+    height: 100%;
+}
+.bluemp_block_article_reply_block_userPhoto img {
+    border-radius: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.bluemp_block_article_reply_block_userInfo {
+    float: inherit; 
+    width: inherit;
+    margin: inherit;
+}
+.bluemp_block_article_reply_block_userNickname {
+    font-size: .74rem;
+    color: rgb(90,114,154);
+}
+li.bluemp_block_article_reply_block_userNickname a {
+    color: rgb(90,114,154);
+}
+.bluemp_block_article_reply_block_replyTime {
+    font-size: .6rem;
+    float: inherit;
+    padding: .2rem 0;
+}
+.bluemp_block_article_reply_replyContent {
+    width: inherit;
+    line-height: inherit;
+    font-size: .74rem;
+    color: #333;
+    float: inherit; 
+    padding: .2rem 0;
+}
+.bluemp_block_article_reply_block_userLevel {
+    height: .7rem;
+    width: 1rem;
+    padding: 0 0 .1rem .25rem;
+}
+.bluemp_block_article_options_comment_on a {
+    font-size: .74rem;
+    line-height: 1.65rem;
+    padding: 0 .45rem;
+}
+.bluemp_block_article_options_readnum {
+    font-size: .74rem;
+}
+.bluemp_block_article_options_praise {
+    font-size: .74rem;
+    margin-left: .5rem;
+}
+.bluemp_block_article_reply_listTop {
+    background-color: #DADADA;
+    padding: 0 .9rem;
+    font-size: .74rem;
+    line-height: 1.5rem;
+    color: inherit;
+}
+.bluemp_block_article_reply_replyOption {
+    width: inherit; 
+    height: inherit; 
+    line-height: inherit; 
+    float: inherit; 
+}
+.bluemp_block_article_reply_praise {
+    height: inherit; 
+    width: inherit; 
+    line-height: inherit; 
+    font-size: .74rem;
+    color: #4a85e3;
+    padding: 0 .5rem;
+}
+img.face {
+    width: .9rem;
+    height: .9rem;
+}
+.bluemp_block_article_reply_praiseIconOff,
+.bluemp_block_article_reply_praiseIconOn {
+    background-size: .74rem .74rem;
+    width: .9rem;
+    height: .9rem;
+    padding: 0;
+    line-height: 1.2rem;
+    font-size: .74rem;
+}
+.bluemp_block_article_reply_praiseCount {
+    padding: 0 0 0 .1rem;
+    font-size: .7rem;
+    color:rgb(127, 166, 181);
+}
+.bluemp_block_article_options_praiseIconOff,
+.bluemp_block_article_options_praiseIconOn {
+    background-size: .74rem .82rem;
+    width: .74rem;
+    height: .82rem;
+}
+.bluemp_block_article_reply_delete {
+    line-height: inherit;
+    font-size: .7rem;
+    color: rgb(127, 166, 181);
+    padding-left: .2rem;
+    padding-right: .5rem;
+}
